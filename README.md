@@ -34,9 +34,8 @@ has_many :messages
 
 
 ### Association
-belongs_to:groups_users
-belongs_to:users, through: :groups_users
-belongs_to:groups
+belongs_to:user
+belongs_to:group
 
 
 ## groups_usersテーブル
@@ -47,7 +46,7 @@ belongs_to:groups
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+belongs_to :user
+belongs_to :group
 
 
