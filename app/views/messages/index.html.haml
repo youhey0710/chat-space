@@ -1,0 +1,60 @@
+.wrapper
+  = render "side_bar"
+  = render "main_chat"
+
+.header
+  .side-bar_user-name
+    .user-name
+      .name
+        masa
+      .icon
+        =link_to "https://＃", class: "contents__btn contents__btn--icon1" do
+          <i class="fas fa-edit icon1"></i>
+        =link_to "https://＃", class: "contents__btn contents__btn--icon2" do
+          <i class="fas fa-cog icon2"></i>
+  .chat-main__group-info
+    .group__name__header
+      test
+    .edit__button
+      =link_to "https://＃", class: "contents__btn contents__btn--Edit" do
+        Edit
+    .group__name__menber
+      Menber:masa
+
+.contents
+  .side-bar_group-list
+    .group__name
+      techcamp
+    .group__message
+      まだメッセージがありません
+  .chat-main__message-list
+    .chat-main__info
+      .chat-main__member
+        masa
+      .chat-main__data
+        2019/11/20(Wed) 17:43:01
+    .chat-main__message
+      おはよう!
+    .chat-main__info2
+      .chat-main__member2
+        masa
+      .chat-main__data2
+        2019/11/20(Wed) 17:43:01
+    .chat-main__message2
+      今日は夜から雨
+.footer
+  .chat-main__message-form
+    .chat-main__message__box
+      .chat-main__text__area
+        %form
+          %input{:type => "text", :placeholder =>"type a message", :style =>"width:800px;height:50px;"}
+        .chat-main__icon
+          %label{class: "input-box__image"}
+            <i class="fas fa-image"></i>
+            %input{type: "file", name:"datafile", id:"filesend"}
+    .send__button
+      =link_to "https://＃", class: "contents__btn contents__btn--send" do
+        send
+      
+
+   
