@@ -4,55 +4,55 @@
 
 .header
   .side-bar_user-name
-    .user-name
-      .name
+    .side-bar_user-name--user-name
+      .side-bar_user-name--user-name__name
         masa
-      .icon
+      .side-bar_user-name--user-name__icon
         =link_to "https://＃", class: "contents__btn contents__btn--icon1" do
           <i class="fas fa-edit icon1"></i>
         =link_to "https://＃", class: "contents__btn contents__btn--icon2" do
           <i class="fas fa-cog icon2"></i>
-  .chat-main__group-info
-    .group__name__header
+  .chat-main_group-info
+    .chat-main_group-info--name
       test
-    .edit__button
+    .chat-main_group-info--edit-button
       =link_to "https://＃", class: "contents__btn contents__btn--Edit" do
         Edit
-    .group__name__menber
+    .chat-main_group-info--menber
       Menber:masa
 
 .contents
   .side-bar_group-list
-    .group__name
+    .side-bar_group-list--group_name
       techcamp
-    .group__message
+    .side-bar_group-list--group_message
       まだメッセージがありません
-  .chat-main__message-list
-    .chat-main__info
-      .chat-main__member
+  .chat-main_message-list
+    .chat-main_message-list--info
+      .chat-main_message-list--info__member
         masa
-      .chat-main__data
+      .chat-main_message-list--info__data
         2019/11/20(Wed) 17:43:01
-    .chat-main__message
+    .chat-main_message-list--message
       おはよう!
-    .chat-main__info2
-      .chat-main__member2
+    .chat-main_message-list--info2
+      .chat-main_message-list--info2__member2
         masa
-      .chat-main__data2
+      .chat-main_message-list--info2__data2
         2019/11/20(Wed) 17:43:01
-    .chat-main__message2
+    .chat-main_message-list--message2
       今日は夜から雨
 .footer
-  .chat-main__message-form
-    .chat-main__message__box
-      .chat-main__text__area
+  .chat-main_message-form
+    .chat-main_message-form--box
+      .chat-main_message-form--box__area
         %form
-          %input{:type => "text", :placeholder =>"type a message", :style =>"width:800px;height:50px;"}
-        .chat-main__icon
+          %input{type: "text", placeholder: "type a message", style: "width:800px;height:50px;"}
+        .chat-main_message-form--box__area--icon
           %label{class: "input-box__image"}
             <i class="fas fa-image"></i>
-            %input{type: "file", name:"datafile", id:"filesend"}
-    .send__button
+            %input{type: "file", name: "datafile", id: "filesend"}
+    .chat-main_message-form--button
       =link_to "https://＃", class: "contents__btn contents__btn--send" do
         send
       
