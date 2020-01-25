@@ -1,7 +1,10 @@
 @import "./reset";
+@import "config/colors";
 @import "./messages";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
+@import "modules/user";
+@import "modules/flash";
 
 .side-bar_user-name{
   width:300px;
