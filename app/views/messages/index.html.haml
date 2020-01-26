@@ -8,7 +8,7 @@
       .side-bar_user-name--user-name__name
         = current_user.name
       .side-bar_user-name--user-name__icon
-        =link_to "https://＃", class: "contents__btn contents__btn--icon1" do
+        =link_to new_group_path(current_user), class: "contents__btn contents__btn--icon1" do
           <i class="fas fa-edit icon1"></i>
         =link_to edit_user_path(current_user), class: "contents__btn contents__btn--icon2" do
           <i class="fas fa-cog icon2"></i>
@@ -23,10 +23,13 @@
 
 .contents
   .side-bar_group-list
-    .side-bar_group-list--group_name
-      techcamp
-    .side-bar_group-list--group_message
-      まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .side-bar_group-list--group_name
+            = group.name
+          .side-bar_group-list--group_message
+            まだメッセージがありません
   .chat-main_message-list
     .chat-main_message-list--info
       .chat-main_message-list--info__member
