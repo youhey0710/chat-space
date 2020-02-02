@@ -1,0 +1,46 @@
+.messages
+  = render @messages
+
+.main_contents
+  
+  .main_header
+    .chat-main_group-info
+      .chat-main_group-info--name
+        = @group.name
+      .chat-main_group-info--edit-button
+        =link_to edit_group_path(current_user), class: "contents__btn contents__btn--Edit" do
+          Edit
+      .chat-main_group-info--menber
+        Menber:
+        - @group.users.each do |users_name|
+          = users_name.name
+          -# puts "#{users_name}"
+
+  .main_message
+    .chat-main_message-list
+      .chat-main_message-list--info
+        .chat-main_message-list--info__member
+          masa
+        .chat-main_message-list--info__data
+          2019/11/20(Wed) 17:43:01
+      .chat-main_message-list--message
+        おはよう!
+      .chat-main_message-list--info2
+        .chat-main_message-list--info2__member2
+          masa
+        .chat-main_message-list--info2__data2
+          2019/11/20(Wed) 17:43:01
+      .chat-main_message-list--message2
+        今日は夜から雨
+
+  .footer
+    .chat-main_message-form
+      .chat-main_message-form--box
+        .chat-main_message-form--box__area
+          = form_for [@group, @message] do |f|
+            = f.text_field :content, class: 'form__message', placeholder: 'type a message',style:'width:800px;height:50px'
+            .chat-main_message-form--box__area--icon
+              = f.label :image, class: 'chat-main_message-form--box__area' do
+                = icon('fas', 'image', class: 'chat-main_message-form--box__area--icon')
+                = f.file_field :image, class: 'filesend'
+            = f.submit 'Send', class: 'chat-main_message-form--button'
