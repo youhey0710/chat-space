@@ -7,12 +7,23 @@
 @import "modules/flash";
 @import "./group";
 
+.side_contents {
+  height: auto;
+  width:300px;
+  float:left;
+}
+
+.main_contents{
+  height: auto;
+  width:calc(100vw - 300px);
+  float: right;
+}
+
 .side-bar_user-name{
   width:300px;
   height:100px;
   background-color: #253141;
   display:flexbox;
-  float:left;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +63,6 @@
   width:calc(100vw - 300px);
   height:100px;
   background-color: #ffffff;
-  float:left;
   border-bottom:solid #eeeeee;
   position:relative;
   display:flex;
@@ -116,7 +126,7 @@
   width:calc(100vw - 300px);
   height:calc(100vh - 190px);
   background-color: #fafafa;
-  float:left;
+  float:right;
   &--info{
     display:flex;
     &__member{
@@ -160,18 +170,17 @@
   width:calc(100vw - 300px);
   height:90px;
   background-color:#d2d2d2;
-  float:left;
+  float:right;
   display: flex;
   align-items: center;
   &--box{
     margin-left:40px;
+    position: relative;
     &__area{
-      display:flex;
-      position:relative;
-      align-items: center;
       &--icon{
         position:absolute;
-        right:10px;
+        right:70px;
+        top:10px;
       }
     }
   }
@@ -186,7 +195,7 @@
   }
 }
 
-#filesend{
+.filesend{
   display:none;
 }
 
