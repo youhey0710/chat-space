@@ -1,6 +1,3 @@
-.messages
-  = render @messages
-
 .main_contents
   
   .main_header
@@ -16,22 +13,8 @@
           = users_name.name
           -# puts "#{users_name}"
 
-  .main_message
-    .chat-main_message-list
-      .chat-main_message-list--info
-        .chat-main_message-list--info__member
-          masa
-        .chat-main_message-list--info__data
-          2019/11/20(Wed) 17:43:01
-      .chat-main_message-list--message
-        おはよう!
-      .chat-main_message-list--info2
-        .chat-main_message-list--info2__member2
-          masa
-        .chat-main_message-list--info2__data2
-          2019/11/20(Wed) 17:43:01
-      .chat-main_message-list--message2
-        今日は夜から雨
+  .chat-main_message-list
+    = render @messages
 
   .footer
     .chat-main_message-form
