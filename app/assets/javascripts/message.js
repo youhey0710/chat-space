@@ -76,10 +76,10 @@ $('#new_message').on('submit', function(e){
        $('.chat-main_message-list').animate({ scrollTop: $('.chat-main_message-list')[0].scrollHeight});
      })
      .fail(function() {
-      alert("メッセージ送信に失敗しました");
+       alert("メッセージ送信に失敗しました");
      })
      .always(function(data){
-      $('.chat-main_message-form--button').prop('disabled', false);
+       $('.chat-main_message-form--button').prop('disabled', false);
      })
     var reloadMessages = function(){
       last_message_id = $('.message:last').data("message-id");
@@ -100,7 +100,7 @@ $('#new_message').on('submit', function(e){
         }
       })
       .fail(function(){
-        console.log('error');
+        aleat('error');
       });
     };
 })
