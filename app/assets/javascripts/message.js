@@ -81,7 +81,11 @@ $('#new_message').on('submit', function(e){
      .always(function(data){
        $('.chat-main_message-form--button').prop('disabled', false);
      })
+    })
+
+
     var reloadMessages = function(){
+      if (document.location.href.match(/\/groups\/\d+\/messages/)) {
       last_message_id = $('.message:last').data("message-id");
       $.ajax({
         url: "api/messages",
@@ -90,21 +94,21 @@ $('#new_message').on('submit', function(e){
         data: {id: last_message_id}
       })
       .done(function(messages){
-        if(message.length !== 0){
+        if(messages.length !== 0){
           var insertHTML = '';
           $.each(messages, function(i, message){
             insertHTML += buildHTML(message)
           });
-          $('.messages').append(insertHTML);
-          $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+          $('.chat-main_message-list').append(insertHTML);
+          $('.chat-main_message-list').animate({ scrollTop: $('.chat-main_message-list')[0].scrollHeight});
         }
       })
       .fail(function(){
-        aleat('error');
+        alert('error');
       });
+    }
     };
-})
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+
     setInterval(reloadMessages, 7000);
-  }
+  
 });
