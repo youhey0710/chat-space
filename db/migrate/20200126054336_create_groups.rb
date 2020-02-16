@@ -7,4 +7,3 @@ class CreateGroups < ActiveRecord::Migration[5.0]
     end
   end
 end
-bundle exec cap production deploy
