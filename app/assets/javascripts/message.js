@@ -86,7 +86,7 @@ $('#new_message').on('submit', function(e){
 
     var reloadMessages = function(){
       if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-      last_message_id = $('.message:last').data("message-id");
+      last_message_id = $('.chat-main_message-lists:last').data("message-id");
       $.ajax({
         url: "api/messages",
         type: 'get',
@@ -99,7 +99,7 @@ $('#new_message').on('submit', function(e){
           $.each(messages, function(i, message){
             insertHTML += buildHTML(message)
           });
-          $('.chat-main_message-list').append(insertHTML);
+          $('.chat-main_message-lists').append(insertHTML);
           $('.chat-main_message-list').animate({ scrollTop: $('.chat-main_message-list')[0].scrollHeight});
         }
       })
