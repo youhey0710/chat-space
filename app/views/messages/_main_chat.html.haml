@@ -5,7 +5,7 @@
       .chat-main_group-info--name
         = @group.name
       .chat-main_group-info--edit-button
-        =link_to edit_group_path(current_user), class: "contents__btn contents__btn--Edit" do
+        =link_to edit_group_path(@group), class: "contents__btn contents__btn--Edit" do
           Edit
       .chat-main_group-info--menber
         Menber:
@@ -21,7 +21,7 @@
       .chat-main_message-form--box
         .chat-main_message-form--box__area
           = form_for [@group, @message] do |f|
-            = f.text_field :content, class: 'form__message', placeholder: 'type a message',style:'width:800px;height:50px'
+            = f.text_field :content, class: 'form__message', placeholder: 'type a message',style:'width:980px;height:50px'
             .chat-main_message-form--box__area--icon
               = f.label :image, class: 'chat-main_message-form--box__area' do
                 = icon('fas', 'image', class: 'chat-main_message-form--box__area--icon')
