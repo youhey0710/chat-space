@@ -3,7 +3,7 @@ $(function(){
      function buildHTML(message){
       if ( message.content && message.image ) {
         var html =
-         `<div class= "chat-main_message-list" data-message-id=${message.id}>
+         `<div class= "chat-main-message-lists" data-message-id=${message.id}>
             <div class= "chat-main_message-list--info">
               <div class= "chat-main_message-list--info__member">
                 ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
           </div>`
       } else if (message.content) {
         var html =
-         `<div class= "chat-main_message-list" data-message-id=${message.id}>
+         `<div class= "chat-main-message-lists" data-message-id=${message.id}>
             <div class= "chat-main_message-list--info">
               <div class= "chat-main_message-list--info__member">
                 ${message.user_name}
@@ -38,7 +38,7 @@ $(function(){
           </div>`
       } else if (message.image){
         var html =
-         `<div class= "chat-main_message-list" data-message-id=${message.id}>
+         `<div class= "chat-main-message-lists" data-message-id=${message.id}>
             <div class= "chat-main_message-list--info">
               <div class= "chat-main_message-list--info__member">
                 ${message.user_name}
@@ -86,7 +86,8 @@ $('#new_message').on('submit', function(e){
 
     var reloadMessages = function(){
       if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-      last_message_id = $('.chat-main_message-lists:last').data("message-id");
+      last_message_id = $('.chat-main-message-lists:last').data("message-id");
+      console.log(last_message_id)
       $.ajax({
         url: "api/messages",
         type: 'get',
@@ -99,7 +100,7 @@ $('#new_message').on('submit', function(e){
           $.each(messages, function(i, message){
             insertHTML += buildHTML(message)
           });
-          $('.chat-main_message-lists').append(insertHTML);
+          $('.chat-main_message-list').append(insertHTML);
           $('.chat-main_message-list').animate({ scrollTop: $('.chat-main_message-list')[0].scrollHeight});
         }
       })
