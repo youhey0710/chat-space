@@ -19,6 +19,7 @@ $(function(){
             </div>
             <img src=${message.image} >
           </div>`
+          return html;
       } else if (message.content) {
         var html =
          `<div class= "chat-main-message-lists" data-message-id=${message.id}>
@@ -36,6 +37,7 @@ $(function(){
               </p>
             </div>
           </div>`
+          return html;
       } else if (message.image){
         var html =
          `<div class= "chat-main-message-lists" data-message-id=${message.id}>
@@ -49,12 +51,12 @@ $(function(){
             </div>
             <div class= "chat-main_message-list--message">
               <p class= "lower-message__content">
-                ${message.image}
+               <img src=${message.image}>
               </p>
             </div>
           </div>`
+          return html;
       };
-      return html;
      };
 
 $('#new_message').on('submit', function(e){
